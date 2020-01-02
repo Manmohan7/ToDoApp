@@ -1,5 +1,7 @@
 <div class="form-group todo">
-    <input (change)="onToggle(todo)" type="checkbox" class="form-check-input" [checked]="todo.completed">
-    <label class="col-4" [ngClass]="setClasses()"> {{ todo.title }} </label>
+    <label class="col-4" [ngClass]="setClasses()">
+        <input (change)="onToggle(todo)" type="checkbox" class="form-check-input" [checked]="todo.completed">
+        {{ todo.title }}
+    </label>
     <button (click)="onDelete(todo)" class="btn btn-sm btn-danger"> x </button>
 </div>

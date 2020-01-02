@@ -14,7 +14,9 @@ export class ToDosComponent implements OnInit {
   constructor(private todoService: TodoService) { }
 
   ngOnInit() {
-    this.todos = this.todoService.getTodos()
+    this.todoService.getTodos(10).subscribe(todos => {
+      this.todos = todos
+    })
   }
 
 }
