@@ -1,7 +1,13 @@
-<div class="form-group todo">
-    <label class="col-4" [ngClass]="setClasses()">
-        <input (change)="onToggle(todo)" type="checkbox" class="form-check-input" [checked]="todo.completed">
-        {{ todo.title }}
-    </label>
-    <button (click)="onDelete(todo)" class="btn btn-sm btn-danger"> x </button>
+<div class="form-row align-items-center py-2">
+    <div class="col-10">
+        <div class="form-check">
+            <input (change)="onToggle(todo)" type="checkbox" id="{{todo.id}}" class="form-check-input" [checked]="todo.completed">
+            <label class="form-check-label" for="{{todo.id}}" [ngClass]="setClasses()">
+                {{ todo.title }}
+            </label>
+        </div>
+    </div>
+    <div class="col-2">
+        <button (click)="onDelete(todo)" class="btn btn-danger btn-sm col-auto"> Delete </button>
+    </div>
 </div>
