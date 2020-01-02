@@ -28,7 +28,15 @@ export class TodoService {
   }
 
   /**
-   * Toggle the status of Todo item
+   * Add new Todo items.
+   * @param todo new todo to be inserted
+   */
+  addTodo(todo): Observable<Todo> {
+    return this.http.post<Todo>(this.todoUrl, todo, httpOptions)
+  }
+  
+  /**
+   * Toggle the status of Todo item.
    * @param todo Todo item 
    */
   toggleCompleted(todo: Todo): Observable<any> {
@@ -36,7 +44,7 @@ export class TodoService {
   }
 
   /**
-   * Delete the Todo item
+   * Delete the Todo item.
    * @param todo Todo item
    */
   deleteTodo(todo: Todo): Observable<any> {

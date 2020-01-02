@@ -27,4 +27,10 @@ export class ToDosComponent implements OnInit {
     })
   }
 
+  addTodo(todo) {
+    this.todoService.addTodo(todo).subscribe(t => {
+      this.todos.push(t)
+    })
+  }
+
 }
